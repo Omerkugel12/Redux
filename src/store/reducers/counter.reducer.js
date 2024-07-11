@@ -1,7 +1,8 @@
-import { DECREMENT, INCREMENT } from "../actionTypes";
+import { CHANGE_COUNTER_NAME, DECREMENT, INCREMENT } from "../actionTypes";
 
 const INITIAL_STATE = {
   count: 0,
+  name: "Omer",
 };
 
 function counterReducer(state = INITIAL_STATE, action) {
@@ -12,6 +13,8 @@ function counterReducer(state = INITIAL_STATE, action) {
       return { ...state, count: state.count + 1 };
     case DECREMENT:
       return { ...state, count: state.count - 1 };
+    case CHANGE_COUNTER_NAME:
+      return { ...state, name: action.payload };
     default:
       return state;
   }
