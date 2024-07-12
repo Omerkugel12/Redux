@@ -6,7 +6,12 @@ import {
   increment,
 } from "./store/actions/counter.action";
 import { setLang, setTheme } from "./store/actions/settings.action";
-import { addCat, fetchCats, removeCat } from "./store/actions/cats.action";
+import {
+  addCat,
+  fetchCats,
+  removeCat,
+  updateCat,
+} from "./store/actions/cats.action";
 
 function App() {
   const { count, name } = useSelector((state) => state.counterModule);
@@ -49,6 +54,10 @@ function App() {
 
   function handleRemoveCat(catId) {
     dispatch(removeCat(catId));
+  }
+
+  function handleUpdateCat(catId) {
+    dispatch(updateCat(catId, { name: "baba" }));
   }
 
   return (
@@ -100,12 +109,20 @@ function App() {
           {cats.map((cat) => (
             <li key={cat.id} className="border border-black p-2">
               <p>{cat.name}</p>
-              <button
-                className="bg-red-500 p-0.5 rounded-lg"
-                onClick={() => handleRemoveCat(cat.id)}
-              >
-                Delete
-              </button>
+              <div className="flex gap-2">
+                <button
+                  className="bg-red-500 p-0.5 rounded-lg"
+                  onClick={() => handleRemoveCat(cat.id)}
+                >
+                  Delete
+                </button>
+                <button
+                  className="bg-blue-400 p-0.5 rounded-lg"
+                  onClick={() => handleUpdateCat(cat.id)}
+                >
+                  Edit
+                </button>
+              </div>
             </li>
           ))}
         </ul>
