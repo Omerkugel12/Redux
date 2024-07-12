@@ -9,7 +9,7 @@ function catsReducer(state = INITIAL_CATS_STATE, action) {
     case SET_CATS:
       return { ...state, cats: action.payload };
     case ADD_CAT:
-      return { ...state, cats: [...state, action.payload] };
+      return { ...state, cats: [...state.cats, action.payload] };
     case REMOVE_CAT:
       return {
         ...state,

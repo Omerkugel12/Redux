@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCats());
-  }, [dispatch]); // Ensure dispatch is a dependency
+  }, []);
 
   function handleIncrement() {
     dispatch(increment());
@@ -40,9 +40,7 @@ function App() {
   }
 
   function handleAddCat() {
-    // Hardcoded cat name example
-    const newCatName = "Whiskers";
-    dispatch(addCat({ name: newCatName }));
+    dispatch(addCat({ name: "baba" }));
   }
 
   return (
@@ -97,12 +95,12 @@ function App() {
             </li>
           ))}
         </ul>
-        <button
+        {/* <button
           onClick={handleAddCat}
           className="bg-cyan-500 text-white p-2 rounded-lg"
         >
           Add Cat
-        </button>
+        </button> */}
       </div>
     </>
   );
