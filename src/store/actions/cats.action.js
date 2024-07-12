@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ADD_CAT, REMOVE_CAT, SET_CATS, UPDATE_CAT } from "../actionTypes";
 
-const CATS_URL = "http://localhost:8001/cats";
+const CATS_URL = "http://localhost:8001/cats/";
 
 export function fetchCats() {
   return async (dispatch) => {

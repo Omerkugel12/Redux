@@ -6,7 +6,7 @@ import {
   increment,
 } from "./store/actions/counter.action";
 import { setLang, setTheme } from "./store/actions/settings.action";
-import { addCat, fetchCats } from "./store/actions/cats.action";
+import { addCat, fetchCats, removeCat } from "./store/actions/cats.action";
 
 function App() {
   const { count, name } = useSelector((state) => state.counterModule);
@@ -39,8 +39,16 @@ function App() {
     dispatch(setLang(lang));
   }
 
-  function handleAddCat() {
-    dispatch(addCat({ name: "baba" }));
+  function handleAddCat(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const newName = formData.get("catNameInput");
+    const newCat = { name: newName };
+    dispatch(addCat(newCat));
+  }
+
+  function handleRemoveCat(catId) {
+    dispatch(removeCat(catId));
   }
 
   return (
@@ -91,16 +99,33 @@ function App() {
         <ul className="flex gap-2">
           {cats.map((cat) => (
             <li key={cat.id} className="border border-black p-2">
-              {cat.name}
+              <p>{cat.name}</p>
+              <button
+                className="bg-red-500 p-0.5 rounded-lg"
+                onClick={() => handleRemoveCat(cat.id)}
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
-        {/* <button
-          onClick={handleAddCat}
-          className="bg-cyan-500 text-white p-2 rounded-lg"
+        <form
+          onSubmit={(e) => handleAddCat(e)}
+          className="flex flex-col gap-2 p-2 w-60 border border-black mt-2 ml-2"
         >
-          Add Cat
-        </button> */}
+          <input
+            type="text"
+            name="catNameInput"
+            className="border border-black p-1"
+            placeholder="Enter new cat name..."
+          />
+          <button
+            type="submit"
+            className="bg-cyan-500 text-white p-2 rounded-lg"
+          >
+            Add Cat
+          </button>
+        </form>
       </div>
     </>
   );
