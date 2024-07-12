@@ -1,7 +1,8 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import counterReducer from "./reducers/counter.reducer";
 import settingsReducer from "./reducers/settings.reducer";
 import catsReducer from "./reducers/cats.reducer";
+import { thunk } from "redux-thunk";
 
 const rootReducer = combineReducers({
   counterModule: counterReducer,
@@ -9,7 +10,7 @@ const rootReducer = combineReducers({
   catsModule: catsReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // This is for debugging purposes.
 // make sure to remove this in production ❗

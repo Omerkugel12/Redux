@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import {
   changeCounterName,
   decrement,
   increment,
 } from "./store/actions/counter.action";
 import { setLang, setTheme } from "./store/actions/settings.action";
-import { useEffect, useState } from "react";
-import { fetchCats } from "./store/actions/cats.action";
+import { addCat, fetchCats } from "./store/actions/cats.action";
 
 function App() {
   const { count, name } = useSelector((state) => state.counterModule);
@@ -16,13 +16,13 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCats());
-  }, []);
+  }, [dispatch]); // Ensure dispatch is a dependency
 
   function handleIncrement() {
     dispatch(increment());
   }
 
-  function handledecrement() {
+  function handleDecrement() {
     dispatch(decrement());
   }
 
@@ -38,22 +38,30 @@ function App() {
   function handleChangeLang(lang) {
     dispatch(setLang(lang));
   }
+
+  function handleAddCat() {
+    // Hardcoded cat name example
+    const newCatName = "Whiskers";
+    dispatch(addCat({ name: newCatName }));
+  }
+
   return (
     <>
       {/* Counter */}
       <div>
         <h1>
-          Counter: {count} name: {name}
+          Counter: {count} Name: {name}
         </h1>
         <button onClick={handleIncrement}>+</button>
-        <button onClick={handledecrement}>-</button>
+        <button onClick={handleDecrement}>-</button>
         <input
           type="text"
-          className="border "
+          className="border"
           value={name}
           onChange={handleChangeCounterName}
         />
       </div>
+
       {/* Settings */}
       <div>
         <h1>Settings</h1>
@@ -78,14 +86,23 @@ function App() {
           <button onClick={() => handleChangeLang("he")}>he</button>
         </div>
       </div>
+
       {/* Cats */}
       <div>
         <h1>Cats 😼</h1>
-        <ul>
-          {cats.map((cat) => {
-            return <li key={cat.id}>{cat.name}</li>;
-          })}
+        <ul className="flex gap-2">
+          {cats.map((cat) => (
+            <li key={cat.id} className="border border-black p-2">
+              {cat.name}
+            </li>
+          ))}
         </ul>
+        <button
+          onClick={handleAddCat}
+          className="bg-cyan-500 text-white p-2 rounded-lg"
+        >
+          Add Cat
+        </button>
       </div>
     </>
   );

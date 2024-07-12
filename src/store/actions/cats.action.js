@@ -7,7 +7,7 @@ export function fetchCats() {
   return async (dispatch) => {
     try {
       const res = await axios.get(CATS_URL);
-      dispatch({ type: SET_CATS, payload: cats });
+      dispatch({ type: SET_CATS, payload: res.data });
     } catch (error) {
       console.log(error);
     }

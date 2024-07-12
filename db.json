@@ -1,48 +1,56 @@
 {
   "cats": [
     {
-      "id": "b844",
-      "name": "new cat"
+      "id": "cat1",
+      "name": "Fluffy"
     },
     {
-      "id": "b87a",
-      "name": "new cat"
+      "id": "cat2",
+      "name": "Whiskers"
     },
     {
-      "id": "a122",
-      "name": "new cat"
+      "id": "cat3",
+      "name": "Mittens"
     },
     {
-      "id": "bef8",
-      "name": "new cat"
+      "id": "cat4",
+      "name": "Smokey"
     },
     {
-      "id": "0174",
-      "name": "new cat"
+      "id": "cat5",
+      "name": "Felix"
     },
     {
-      "id": "738a",
-      "name": "new cat"
+      "id": "cat6",
+      "name": "Snowball"
     },
     {
-      "id": "36fd",
-      "name": "new cat"
+      "id": "cat7",
+      "name": "Tiger"
     },
     {
-      "id": "bb10",
-      "name": "new cat"
+      "id": "cat8",
+      "name": "Oreo"
     },
     {
-      "id": "658e",
-      "name": "new cat"
+      "id": "cat9",
+      "name": "Simba"
     },
     {
-      "id": "76c5",
-      "name": "new cat"
+      "id": "cat10",
+      "name": "Luna"
     },
     {
-      "id": "3bd2",
-      "name": "new cat"
+      "id": "cat11",
+      "name": "Ginger"
+    },
+    {
+      "id": "02e4",
+      "name": "Whiskers"
+    },
+    {
+      "id": "7b17",
+      "name": "Whiskers"
     }
   ]
 }
