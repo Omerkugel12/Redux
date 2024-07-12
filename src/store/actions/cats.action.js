@@ -16,8 +16,12 @@ export function fetchCats() {
 
 export function addCat(newCat) {
   return async (dispatch) => {
-    const res = await axios.post(CATS_URL, newCat);
-    dispatch({ type: ADD_CAT, payload: res.data });
+    try {
+      const res = await axios.post(CATS_URL, newCat);
+      dispatch({ type: ADD_CAT, payload: res.data });
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
 
