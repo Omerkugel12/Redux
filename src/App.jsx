@@ -12,7 +12,7 @@ import {
   removeCat,
   updateCat,
 } from "./store/actions/cats.action";
-import { addCar, getCars } from "./store/actions/cars.action";
+import { addCar, deleteCar, getCars } from "./store/actions/cars.action";
 
 function App() {
   const { count, name } = useSelector((state) => state.counterModule);
@@ -76,8 +76,12 @@ function App() {
     dispatch(addCar(newCar));
   }
 
-  function handleRemoveCar(carId) {}
+  function handleRemoveCar(carId) {
+    dispatch(deleteCar(carId));
+  }
+
   function handleUpdateCar(carId) {}
+
   return (
     <>
       {/* Counter */}
