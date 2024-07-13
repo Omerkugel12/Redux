@@ -12,3 +12,6 @@ export const SET_CATS = "SET_CATS";
 export const ADD_CAT = "ADD_CAT";
 export const REMOVE_CAT = "REMOVE_CAT";
 export const UPDATE_CAT = "UPDATE_CAT";
+
+//Cars
+export const SET_CARS = "SET_CARS";

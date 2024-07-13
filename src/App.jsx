@@ -12,15 +12,21 @@ import {
   removeCat,
   updateCat,
 } from "./store/actions/cats.action";
+import { getCars } from "./store/actions/cars.action";
 
 function App() {
   const { count, name } = useSelector((state) => state.counterModule);
   const { theme, lang } = useSelector((state) => state.settingsModule);
   const { cats } = useSelector((state) => state.catsModule);
+  const { cars } = useSelector((state) => state.carsModule);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCats());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getCars());
   }, []);
 
   function handleIncrement() {
@@ -143,6 +149,16 @@ function App() {
             Add Cat
           </button>
         </form>
+      </div>
+
+      {/* Cars */}
+      <div>
+        <h1>Cars</h1>
+        <ul>
+          {cars.map((car) => (
+            <li>{car.model}</li>
+          ))}
+        </ul>
       </div>
     </>
   );

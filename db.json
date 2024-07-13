@@ -31,32 +31,128 @@
     {
       "id": "cat8",
       "name": "Oreo"
-    },
-    {
-      "id": "cat9",
-      "name": "Simba"
     }
   ],
   "cars": [
-    { "id": 1, "brand": "Toyota", "model": "Corolla", "year": 2020 },
-    { "id": 2, "brand": "Honda", "model": "Civic", "year": 2019 },
-    { "id": 3, "brand": "Ford", "model": "Mustang", "year": 2021 },
-    { "id": 4, "brand": "Chevrolet", "model": "Camaro", "year": 2018 },
-    { "id": 5, "brand": "BMW", "model": "X5", "year": 2022 },
-    { "id": 6, "brand": "Audi", "model": "A4", "year": 2017 },
-    { "id": 7, "brand": "Mercedes-Benz", "model": "E-Class", "year": 2023 },
-    { "id": 8, "brand": "Lexus", "model": "RX", "year": 2020 },
-    { "id": 9, "brand": "Hyundai", "model": "Elantra", "year": 2019 },
-    { "id": 10, "brand": "Kia", "model": "Sorento", "year": 2021 },
-    { "id": 11, "brand": "Mazda", "model": "CX-5", "year": 2020 },
-    { "id": 12, "brand": "Nissan", "model": "Altima", "year": 2022 },
-    { "id": 13, "brand": "Subaru", "model": "Outback", "year": 2019 },
-    { "id": 14, "brand": "Volkswagen", "model": "Golf", "year": 2021 },
-    { "id": 15, "brand": "Tesla", "model": "Model S", "year": 2023 },
-    { "id": 16, "brand": "Porsche", "model": "911", "year": 2018 },
-    { "id": 17, "brand": "Jaguar", "model": "F-Type", "year": 2022 },
-    { "id": 18, "brand": "Land Rover", "model": "Discovery", "year": 2020 },
-    { "id": 19, "brand": "Ferrari", "model": "488 GTB", "year": 2019 },
-    { "id": 20, "brand": "McLaren", "model": "720S", "year": 2021 }
+    {
+      "id": "1",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": 2020
+    },
+    {
+      "id": "2",
+      "brand": "Honda",
+      "model": "Civic",
+      "year": 2019
+    },
+    {
+      "id": "3",
+      "brand": "Ford",
+      "model": "Mustang",
+      "year": 2021
+    },
+    {
+      "id": "4",
+      "brand": "Chevrolet",
+      "model": "Camaro",
+      "year": 2018
+    },
+    {
+      "id": "5",
+      "brand": "BMW",
+      "model": "X5",
+      "year": 2022
+    },
+    {
+      "id": "6",
+      "brand": "Audi",
+      "model": "A4",
+      "year": 2017
+    },
+    {
+      "id": "7",
+      "brand": "Mercedes-Benz",
+      "model": "E-Class",
+      "year": 2023
+    },
+    {
+      "id": "8",
+      "brand": "Lexus",
+      "model": "RX",
+      "year": 2020
+    },
+    {
+      "id": "9",
+      "brand": "Hyundai",
+      "model": "Elantra",
+      "year": 2019
+    },
+    {
+      "id": "10",
+      "brand": "Kia",
+      "model": "Sorento",
+      "year": 2021
+    },
+    {
+      "id": "11",
+      "brand": "Mazda",
+      "model": "CX-5",
+      "year": 2020
+    },
+    {
+      "id": "12",
+      "brand": "Nissan",
+      "model": "Altima",
+      "year": 2022
+    },
+    {
+      "id": "13",
+      "brand": "Subaru",
+      "model": "Outback",
+      "year": 2019
+    },
+    {
+      "id": "14",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "year": 2021
+    },
+    {
+      "id": "15",
+      "brand": "Tesla",
+      "model": "Model S",
+      "year": 2023
+    },
+    {
+      "id": "16",
+      "brand": "Porsche",
+      "model": "911",
+      "year": 2018
+    },
+    {
+      "id": "17",
+      "brand": "Jaguar",
+      "model": "F-Type",
+      "year": 2022
+    },
+    {
+      "id": "18",
+      "brand": "Land Rover",
+      "model": "Discovery",
+      "year": 2020
+    },
+    {
+      "id": "19",
+      "brand": "Ferrari",
+      "model": "488 GTB",
+      "year": 2019
+    },
+    {
+      "id": "20",
+      "brand": "McLaren",
+      "model": "720S",
+      "year": 2021
+    }
   ]
 }
