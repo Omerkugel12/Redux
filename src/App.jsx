@@ -12,7 +12,7 @@ import {
   removeCat,
   updateCat,
 } from "./store/actions/cats.action";
-import { getCars } from "./store/actions/cars.action";
+import { addCar, getCars } from "./store/actions/cars.action";
 
 function App() {
   const { count, name } = useSelector((state) => state.counterModule);
@@ -66,6 +66,18 @@ function App() {
     dispatch(updateCat(catId, { name: "baba" }));
   }
 
+  function handleAddCar(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const brand = formData.get("brand");
+    const model = formData.get("model");
+    const year = formData.get("year");
+    const newCar = { brand, model, year };
+    dispatch(addCar(newCar));
+  }
+
+  function handleRemoveCar(carId) {}
+  function handleUpdateCar(carId) {}
   return (
     <>
       {/* Counter */}
@@ -154,11 +166,58 @@ function App() {
       {/* Cars */}
       <div>
         <h1>Cars</h1>
-        <ul>
+        <ul className="flex flex-wrap gap-2 ">
           {cars.map((car) => (
-            <li>{car.model}</li>
+            <li key={car.id} className="border border-black p-2 ">
+              <p>{car.brand}</p>
+              <p>{car.model}</p>
+              <p>{car.year}</p>
+              <div className="flex gap-2">
+                <button
+                  className="bg-red-500 p-0.5 rounded-lg"
+                  onClick={() => handleRemoveCar(car.id)}
+                >
+                  Delete
+                </button>
+                <button
+                  className="bg-blue-400 p-0.5 rounded-lg"
+                  onClick={() => handleUpdateCar(car.id)}
+                >
+                  Edit
+                </button>
+              </div>
+            </li>
           ))}
         </ul>
+        <form
+          onSubmit={(e) => handleAddCar(e)}
+          className="flex flex-col gap-2 p-2 w-60 border border-black mt-2 ml-2"
+        >
+          <input
+            type="text"
+            name="brand"
+            className="border border-black p-1"
+            placeholder="Enter new car brand..."
+          />
+          <input
+            type="text"
+            name="model"
+            className="border border-black p-1"
+            placeholder="Enter new car model..."
+          />
+          <input
+            type="number"
+            name="year"
+            className="border border-black p-1"
+            placeholder="Enter new car year..."
+          />
+          <button
+            type="submit"
+            className="bg-cyan-500 text-white p-2 rounded-lg"
+          >
+            Add Cat
+          </button>
+        </form>
       </div>
     </>
   );
